@@ -32,7 +32,10 @@ int main(int argc, char **argv)
          m = mass;
   double acceleration = -w*w*x;
   double a = acceleration;
-  for (double time = 0; time <= maximum_time; time += dt){
+  ofstream data;
+  data.open ("data.txt");
+  data << "0 \t\t" << x << endl;
+  for (double time = 0; time < maximum_time; time += dt){
     v = v + 0.5*a*dt;
     x = x + v*dt;
     a = -w*w*x;
@@ -40,7 +43,8 @@ int main(int argc, char **argv)
     double kinetic_energy = 0.5*m*velocity*velocity;
     double potential_energy = 0.5*m*w*w*position*position;
     double total_energy = kinetic_energy + potential_energy;
-    cout << time << "\t\t" << x << "\t\t" << total_energy << endl; 
+    data << time + dt << "\t\t" << x << "\t\t" << total_energy << endl;
   }
+  data.close();
   return 0;
 }
