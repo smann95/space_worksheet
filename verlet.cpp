@@ -46,5 +46,6 @@ int main(int argc, char **argv)
     data << time + dt << "\t\t" << x << "\t\t" << total_energy << endl;
   }
   data.close();
+  cout << "Good job!" << endl;
   return 0;
 }
