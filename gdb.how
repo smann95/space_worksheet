@@ -1,0 +1,26 @@
+gdb <executable_name>
+set a breakpoint at <line> in <file>"
+
+b <file.extension>:<line>
+
+run program:
+
+r
+
+run program with command line argument <CA>:
+
+r <CA>
+
+next:
+
+n
+
+display value of a variable <var> at every step:
+
+display <var>
+
+remember: gdb always shows the next line that is going to be executed in the
+program; once you hit 'n' it executes the line it was showing you and shows you
+the next line.
+
+

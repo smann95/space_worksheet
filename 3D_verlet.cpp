@@ -65,6 +65,7 @@ int main(int argc, char **argv)
     double kinetic_energy = 0.5*m*vx*vx + 0.5*m*vy*vy + 0.5*m*vz*vz;
     double potential_energy = 0.5*m*w*w*x*x + 0.5*m*w*w*y*y + 0.5*m*w*w*z*z;
     double total_energy = kinetic_energy + potential_energy;
+    cout << time << "\t\t" << total_energy << endl;
     data << kinetic_energy << "\t\t" << potential_energy << "\t\t" << total_energy << endl;
   }
   data.close();
