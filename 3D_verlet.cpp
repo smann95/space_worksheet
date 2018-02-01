@@ -6,6 +6,10 @@
 #include <fstream>
 using namespace std;
 
+void bs(double)
+{
+}
+
 int main(int argc, char **argv)
 {
   if (argc < 2){
@@ -45,8 +49,9 @@ int main(int argc, char **argv)
   double ay = acceleration_y;
   double az = acceleration_z;
   ofstream data;
-  data.open ("data.txt");
-  data << "0 \t\t" << x << endl;
+  data.open ("data.xyz");
+  data << "1" << endl;
+ // data << "0 \t\t" << x << endl;
   for (double time = 0; time < maximum_time; time += dt){
     vx = vx + 0.5*ax*dt;
     x = x + vx*dt;
@@ -65,8 +70,8 @@ int main(int argc, char **argv)
     double kinetic_energy = 0.5*m*vx*vx + 0.5*m*vy*vy + 0.5*m*vz*vz;
     double potential_energy = 0.5*m*w*w*x*x + 0.5*m*w*w*y*y + 0.5*m*w*w*z*z;
     double total_energy = kinetic_energy + potential_energy;
-    cout << time << "\t\t" << total_energy << endl;
-    data << kinetic_energy << "\t\t" << potential_energy << "\t\t" << total_energy << endl;
+    data << "Ar " <<  x << " " << y << " " << z << endl;
+    bs(total_energy);
   }
   data.close();
   return 0;
